@@ -11,7 +11,7 @@ public class Main {
 		com.addPath(new File("test-files"));	
 		com.getConfig().setExtentions("cs,sql,txt,java");
 		
-		com.make();
+		com.compare();
 
 		System.out.println(com.toCSV());
 

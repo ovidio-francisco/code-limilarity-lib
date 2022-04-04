@@ -50,7 +50,7 @@ public class Comparisons {
 		return list;
 	}
 
-	public List<FilesSimilarity> make() {
+	public List<FilesSimilarity> compare() {
 		
 		createDocuments();
 		comparisons.clear();
@@ -58,9 +58,11 @@ public class Comparisons {
 		for(int i=0; i<docs.size(); i++)
 			for(int j=i+1; j<docs.size(); j++) {
 				
-				mpProcessing.show(String.format("Processing %s and %s", docs.get(i).getSimpleName(), docs.get(j).getSimpleName()));
-				
-				comparisons.add(new FilesSimilarity(docs.get(i), docs.get(j), config.getGranularity()));
+				Document doc1 = docs.get(i);
+				Document doc2 = docs.get(j);
+							
+				mpProcessing.show(String.format("Processing %s and %s", doc1.getSimpleName(), doc2.getSimpleName()));
+				comparisons.add(new FilesSimilarity(doc1, doc2, config.getGranularity()));
 			}
 				
 		Collections.sort(comparisons);
