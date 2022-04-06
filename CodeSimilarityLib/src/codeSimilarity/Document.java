@@ -78,12 +78,5 @@ public class Document {
 			result = result.replaceFirst("/", "");
 		
 		return result;
-	}
-	
-	
-	
-	
-	
-	
-	
+	}	
 }

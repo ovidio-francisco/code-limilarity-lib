@@ -10,21 +10,19 @@ public class Main {
 		
 		com.addPath(new File("test-files"));	
 		com.getConfig().setExtentions("cs,sql,txt,java");
+		com.showDocs();
 		
 		com.compare();
 
 		System.out.println(com.toCSV());
 
+
 		
-		for(Document f : com.getDocs()) {
-			System.out.println("-->"+f);	
-		}		
+//		System.out.println("\n------- Blamed --------\n");
 		
-		System.out.println("\n------- Blameds -------- vai git\n");
-		
-		for(Blame b : com.makeBlameList()) {
-			System.out.println(b);
-		}		
+//		for(Blame b : com.makeBlameList()) {
+//			System.out.println(b);
+//		}		
 	}
 }
 

@@ -28,31 +28,33 @@ public class Comparisons {
 		this.config = config;
 	}
 	
-	public List<Blame> makeBlameList() {
-		List<Blame> list = new ArrayList<>();
-		List<Document> aux = new ArrayList<>();
-		
-		for(FilesSimilarity fs : comparisons) {
-			Document d1 = fs.getDoc1();
-			Document d2 = fs.getDoc2();
-			
-			if(!aux.contains(d1)) {
-				list.add(new Blame(d1, fs));
-				aux.add(d1);
-			}
-			
-			if(!aux.contains(d2)) {
-				list.add(new Blame(d2, fs));
-				aux.add(d2);
-			}
-		}
-		
-		return list;
-	}
+//	public List<Blame> makeBlameList() {
+//		List<Blame> list = new ArrayList<>();
+//		List<Document> aux = new ArrayList<>();
+//		
+//		for(FilesSimilarity fs : comparisons) {
+//			Document d1 = fs.getDoc1();
+//			Document d2 = fs.getDoc2();
+//			
+//			if(!aux.contains(d1)) {
+//				list.add(new Blame(d1, fs));
+//				aux.add(d1);
+//			}
+//			
+//			if(!aux.contains(d2)) {
+//				list.add(new Blame(d2, fs));
+//				aux.add(d2);
+//			}
+//		}
+//		
+//		return list;
+//	}
 
 	public List<FilesSimilarity> compare() {
 		
-		createDocuments();
+		if (docs.size() == 0) 
+			createDocuments();
+		
 		comparisons.clear();
 				
 		for(int i=0; i<docs.size(); i++)
@@ -85,7 +87,7 @@ public class Comparisons {
 						cf.getDoc1Size(),
 						cf.getDoc2Size(),
 						cf.getDistance(), 
-						cf. getSimilarity() * 100, 
+						cf.getSimilarity() * 100, 
 						cf.getDoc1(), 
 						cf.getDoc2())
 					);
@@ -116,7 +118,13 @@ public class Comparisons {
 		*/
 		mpFilesCount.show(docs.size() + " files");
 	}
-
+	
+	public void showDocs() {
+		System.out.println("Documents to compare:");
+		for(Document f : getDocs()) {
+			System.out.println("  "+f);	
+		}		
+	}
 	
 	
 	public List<FilesSimilarity> getComparisons() {
@@ -128,7 +136,9 @@ public class Comparisons {
 	}
 
 	public List<Document> getDocs() {
-		if (docs.size() == 0) createDocuments();
+		if (docs.size() == 0) 
+			createDocuments();
+		
 		return docs;
 	}
 	
