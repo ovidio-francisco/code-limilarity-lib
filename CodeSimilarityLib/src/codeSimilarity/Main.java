@@ -10,8 +10,8 @@ public class Main {
 		
 		com.addPath(new File("test-files"));	
 		com.getConfig().setExtentions("cs,sql,txt,java");
-		com.showDocs();
 		
+		com.showDocs();
 		com.compare();
 
 		System.out.println(com.toCSV());
