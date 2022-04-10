@@ -75,8 +75,6 @@ public final class FilesSimilarity implements Comparable<FilesSimilarity> {
 	@Override
 	public boolean equals(Object obj) {
 		FilesSimilarity other = (FilesSimilarity) obj;
-//		String s1 = this.doc1.getFile().getAbsolutePath() + this.doc1.getFile().getAbsolutePath();
-//		String s2 = other.doc1.getFile().getAbsolutePath() + other.doc1.getFile().getAbsolutePath();
 		
 		String s1 = this.doc1.getFile().getAbsolutePath();
 		String s2 = other.doc1.getFile().getAbsolutePath();

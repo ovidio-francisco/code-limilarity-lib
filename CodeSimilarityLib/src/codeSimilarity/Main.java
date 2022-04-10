@@ -15,14 +15,6 @@ public class Main {
 		com.compare();
 
 		System.out.println(com.toCSV());
-
-
-		
-//		System.out.println("\n------- Blamed --------\n");
-		
-//		for(Blame b : com.makeBlameList()) {
-//			System.out.println(b);
-//		}		
 	}
 }
 

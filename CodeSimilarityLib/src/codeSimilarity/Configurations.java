@@ -1,6 +1,8 @@
 package codeSimilarity;
 
 public class Configurations {
+	
+	/** Sets how the document will splitted */
 	public enum Granularity { BY_CHAR, BY_WORD, BY_LINE }
 	
 	

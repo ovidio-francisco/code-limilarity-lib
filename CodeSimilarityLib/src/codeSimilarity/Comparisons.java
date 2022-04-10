@@ -27,28 +27,6 @@ public class Comparisons {
 		
 		this.config = config;
 	}
-	
-//	public List<Blame> makeBlameList() {
-//		List<Blame> list = new ArrayList<>();
-//		List<Document> aux = new ArrayList<>();
-//		
-//		for(FilesSimilarity fs : comparisons) {
-//			Document d1 = fs.getDoc1();
-//			Document d2 = fs.getDoc2();
-//			
-//			if(!aux.contains(d1)) {
-//				list.add(new Blame(d1, fs));
-//				aux.add(d1);
-//			}
-//			
-//			if(!aux.contains(d2)) {
-//				list.add(new Blame(d2, fs));
-//				aux.add(d2);
-//			}
-//		}
-//		
-//		return list;
-//	}
 
 	public List<FilesSimilarity> compare() {
 		
@@ -103,19 +81,7 @@ public class Comparisons {
 	public void createDocuments() {
 		mpFilesCount.show("Creating documents...");
 
-		
 		docs = Document.findDocs(paths, config.getExtensions(), config.getGranularity());
-		
-		/*
-		File[] p = paths.toArray(new File[0]);
-		
-		File[] files = FileUtils.findFiles(p, config.getExtensions());
-		
-		docs.clear();
-		
-		for(File f : files) 
-			docs.add(new Document(f, config.getGranularity()));
-		*/
 		mpFilesCount.show(docs.size() + " files");
 	}
 	
