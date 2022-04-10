@@ -17,7 +17,3 @@ public class Main {
 		System.out.println(com.toCSV());
 	}
 }
-
-//http://tutorials.jenkov.com/java/packages.html
-
-
