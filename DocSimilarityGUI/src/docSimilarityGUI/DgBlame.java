@@ -26,7 +26,7 @@ import javax.swing.table.DefaultTableModel;
 public class DgBlame extends javax.swing.JDialog {
 
     private final Comparisons comparisons;
-    private boolean showAll = false;
+    private boolean showAll = true;
 
     public DgBlame(java.awt.Frame parent, boolean modal, Comparisons comparisons) {
         super(parent, modal);

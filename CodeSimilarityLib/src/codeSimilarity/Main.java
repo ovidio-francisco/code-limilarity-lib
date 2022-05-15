@@ -9,7 +9,7 @@ public class Main {
 		Comparisons com = new Comparisons();
 		
 		com.addPath(new File("test-files"));	
-		com.getConfig().setExtentions("cs,sql,txt,java");
+		com.getConfig().setExtentions("cs,sql,txt,java,cpp");
 		
 		com.showDocs();
 		com.compare();
@@ -17,3 +17,6 @@ public class Main {
 		System.out.println(com.toCSV());
 	}
 }
+
+
+
